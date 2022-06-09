@@ -2,7 +2,7 @@
 //RUMENUFF
 
 // define variables
-var word = "APPLETREE";
+var word = "SNOWIE";
 // answers must be in all capitals due to key reading
 var height = 1; //number of guesses
 var width = word.length; //length of the word
@@ -28,7 +28,7 @@ window.onload = function () {
 
 function initilise() {
     //Present Question --> need API or way to pull questions?
-    document.getElementById("question").innerText = "Today's Mindboggler\n Type of Fish found swimming in a homemade dessert";
+    document.getElementById("question").innerText = "Today's Mindboggler\n A mad old man is a skiers delight!";
     
     //Create word squares
     for (let r = 0; r < height; r++) {
