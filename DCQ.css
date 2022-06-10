@@ -1,0 +1,75 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+hr {
+    width: 500px;
+}
+
+#title {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+#guess{
+    width: auto;
+    height: auto;
+    /*margin: 0 auto;*/
+    margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#letter{
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tile {
+    border: 2px solid lightgray;
+    width: 50px;
+    height: 50px;
+    margin: 2.5px;
+
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#FGbutton {
+    font-family:'Lucida Sans', 'Lucida Sans Bold', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 0;
+    padding: 10;
+    height: 58px;
+    cursor: pointer;
+    background-color: rgb(62, 62, 65);
+    color: rgb(239, 241, 243);
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 3px;
+    user-select: none;
+    align-items: center;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#FGbutton.win {
+    background-color: #3e8e41;
+  }
+
+  #FGbutton.lose {
+    background-color: #ff0000;
+  }
+
