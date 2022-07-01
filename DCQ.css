@@ -1,4 +1,4 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
@@ -7,13 +7,29 @@ hr {
     width: 500px;
 }
 
+#container {
+    display: flex;
+    /*background-color: black;*/
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+#game {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 #title {
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 1.5px;
 }
 
-#guess{
+#guess {
     width: auto;
     height: auto;
     /*margin: 0 auto;*/
@@ -23,7 +39,7 @@ hr {
     justify-content: center;
 }
 
-#letter{
+#letter {
     width: auto;
     height: auto;
     margin: 0 auto;
@@ -48,8 +64,24 @@ hr {
 
 }
 
+.tilecorrect {
+    border: 2px solid lightgray;
+    width: 50px;
+    height: 50px;
+    margin: 2.5px;
+    background-color: #3e8e41;
+
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 #FGbutton {
-    font-family:'Lucida Sans', 'Lucida Sans Bold', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Bold', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: 0;
     padding: 10;
     height: 58px;
@@ -67,9 +99,49 @@ hr {
 
 #FGbutton.win {
     background-color: #3e8e41;
-  }
+}
 
-  #FGbutton.lose {
+#FGbutton.zone {
+    background-color: rgb(59, 122, 180);
+}
+
+#FGbutton.lose {
     background-color: #ff0000;
-  }
+}
 
+
+#keyboard-container {
+    height: 200px;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+}
+
+.keyboard-row button {
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    height: 58px;
+    cursor: pointer;
+    background-color: rgb(129, 131, 132);
+    color: rgb(215, 218, 220);
+    flex-grow: 1;
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.keyboard-row button.wide-button {
+    flex-grow: 1.5;
+}
+
+.spacer-half {
+    flex-grow: 0.5;
+}
