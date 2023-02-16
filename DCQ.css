@@ -1,10 +1,46 @@
+header{
+    background: url("picture.JPG");
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    position: relative; 
+}
+
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
+.bigger {
+    font-size: 150%;
+    font-style: italic;
+}
 
 hr {
     width: 500px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 20px;
+}
+li a{
+    color: #333;
+    text-decoration: none;
+    padding: 5px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+li a:hover{
+    background-color: #333;
+    color: #fff;
+    border-radius: 3px;
+    transition-duration: 500ms;
 }
 
 #container {
@@ -14,7 +50,22 @@ hr {
     align-items: center;
     flex-direction: column;
 }
-
+#intro {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#example-area {
+    width: auto;
+    height: auto;
+    /*margin: 0 auto;*/
+    margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 #game {
     width: 100%;
     max-width: 500px;
@@ -44,6 +95,13 @@ hr {
     height: auto;
     margin: 0 auto;
     margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.guessrow{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -144,4 +202,14 @@ hr {
 
 .spacer-half {
     flex-grow: 0.5;
+}
+
+
+.keyboard-row button.absent {
+    background-color: #5c594b;
+
+}
+
+.keyboard-row button.correct {
+    background-color: #3e8e41;
 }

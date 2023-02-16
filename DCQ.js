@@ -22,19 +22,45 @@ var doneFINAL = 0;
 var GOGOFINALGUESS = 1;
 guessed.length = GuessTile;
 const FG = document.querySelectorAll(".finalguess1 button");
+const tileDisplay = document.querySelectorAll(".example-area");
+
 
 var GameOver = false;
 
 window.onload = function () {
+
     initilise();
 }
 
 
 
 function initilise() {
+///home Page
+//Example squares
+    //Create word squares
+/*
+    for (let r = 0; r < width; r++) {
+        let attemptsrow = document.createElement("div");
+        attemptsrow.setAttribute("id",r);
+
+        for (let c = 0; c < width; c++) {
+            let tile = document.createElement("span");
+            tile.id = r.toString + "-" + c.toString();
+            tile.classList.add("tile");
+            tile.innerText = "";
+            attemptsrow.append(tile);
+            //document.getElementById(r).appendChild(tile);
+        }        tileDisplay.append(attemptsrow);
+    }*/
+/*     var Gamebutton = document.getElementById('GB');
+    Gamebutton.onclick = function () { game() }; */
+}
+
+//-------------------------need new script js for game page----------------------------S
+function game() {
+//Game Page
     //Present Question --> need API or way to pull questions?
     document.getElementById("question").innerText = "Today's Mindboggler\n A mad old man is a skiers' delight";
-
     //Create word squares
     for (let r = 0; r < height; r++) {
         for (let c = 0; c < width; c++) {
