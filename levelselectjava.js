@@ -2,6 +2,7 @@
 var level = 0;  //I need this vairable to be read in my DCQ.js -- the variable is changed on line 24, when a level button is clicked. 
 var number = 1;
 
+window.level = level; 
 //onload cause it avoids startup bugs (so I am told)
 window.onload = function () {
     initilise();
@@ -27,6 +28,7 @@ for (let r = 0; r < 10; r++) {
             level = tile.id;
             levelnum = tile.id;
             window.location = "Game.html";
+            window.level = level;
             return false;
           };
         number++;
