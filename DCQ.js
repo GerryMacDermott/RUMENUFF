@@ -1,5 +1,7 @@
 //RUMENUFF
 // define variables
+var level = window.level;
+
 var word = "SNOWIE"; // answers must be in all capitals due to key reading --> will be array of all answers
 // 'word' would be selected from array based on 'level' variable from levelselectjava.js
 var height = 1;
