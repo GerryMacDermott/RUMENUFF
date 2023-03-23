@@ -1,65 +1,27 @@
-
 //RUMENUFF
-
 // define variables
-var word = "SNOWIE";
-// answers must be in all capitals due to key reading
-var height = 1; //number of guesses
+var word = "SNOWIE"; // answers must be in all capitals due to key reading --> will be array of all answers
+// 'word' would be selected from array based on 'level' variable from levelselectjava.js
+var height = 1;
 var width = word.length; //length of the word
-var GuessTile = word.length + 1;
+var GuessTile = word.length + 1; //allows the creation of the 'guessing tile'
 var col = word.length;
 var colFINAL = 0;
 var row = 0;
 var done = 0;
-String: sentence = "Hello";
 var failcount = 1;
-letterinput = 0;
 var attempts = word.length + 1;
-var errorcount = 0;
 var guessed = [];
 var letterwasguessedtrue = [];
 var doneFINAL = 0;
-var GOGOFINALGUESS = 1;
 guessed.length = GuessTile;
 const FG = document.querySelectorAll(".finalguess1 button");
 const tileDisplay = document.querySelectorAll(".example-area");
-
-
 var GameOver = false;
 
-window.onload = function () {
 
-    initilise();
-}
-
-
-
-function initilise() {
-///home Page
-//Example squares
-    //Create word squares
-/*
-    for (let r = 0; r < width; r++) {
-        let attemptsrow = document.createElement("div");
-        attemptsrow.setAttribute("id",r);
-
-        for (let c = 0; c < width; c++) {
-            let tile = document.createElement("span");
-            tile.id = r.toString + "-" + c.toString();
-            tile.classList.add("tile");
-            tile.innerText = "";
-            attemptsrow.append(tile);
-            //document.getElementById(r).appendChild(tile);
-        }        tileDisplay.append(attemptsrow);
-    }*/
-/*     var Gamebutton = document.getElementById('GB');
-    Gamebutton.onclick = function () { game() }; */
-}
-
-//-------------------------need new script js for game page----------------------------S
 function game() {
-//Game Page
-    //Present Question --> need API or way to pull questions?
+    //Load question --> will be pulled from array eventually
     document.getElementById("question").innerText = "Today's Mindboggler\n A mad old man is a skiers' delight";
     //Create word squares
     for (let r = 0; r < height; r++) {
@@ -84,7 +46,7 @@ function game() {
         keys[i].onclick = ({ target }) => {
             const keypressed = target.getAttribute("data-key");
 
-
+            //check if letter has already been used, otherwise submit guessed letter
             Enter: if (keypressed == "enter" && col == GuessTile) {
                 let CurrentTile = document.getElementById(row.toString + '-' + GuessTile.toString());
                 for (let cycle = 0; cycle <= GuessTile; cycle++) {
@@ -100,13 +62,14 @@ function game() {
                 update();
             };
 
+            //allow for backspace
             if (keypressed == "del" && col == GuessTile) {
                 col -= 1;
                 let CurrentTile = document.getElementById(row.toString + '-' + GuessTile.toString());
                 CurrentTile.innerText = "";
                 return;
             };
-
+            //recognise letter has been selected
             if (col == GuessTile - 1 && keypressed != "del" && keypressed != "enter") {
                 let CurrentTile = document.getElementById(row.toString + '-' + GuessTile.toString());
                 CurrentTile.innerText = keypressed;
@@ -114,18 +77,19 @@ function game() {
             }
         };
     };
+
+
     let CurrentTile = document.getElementById(row.toString + '-' + GuessTile.toString());
-
-
-    //document.getElementsByName("FGbutton").onclick = function() {test()};
+    //final guess attempt
     var FG = document.getElementById("FGbutton");
     FG.onclick = function () { FINALATTEMPT() };
 
 
 }
-//Check letter is present
+
+//This function is triggered when 'enter' is pressed and criteria is met. 
 function update() {
-    //need a if attempts = 0 --> text on screen final guess!!
+    //need a 'if attempts = 0' --> text on screen final guess!!
     for (let d = 0; d < width; d++) {
         let CurrentTile = document.getElementById(row.toString + '-' + GuessTile.toString()); //may be redundant
         let lettercheck = CurrentTile.innerText
@@ -153,7 +117,7 @@ function update() {
     }
 }
 
-FINALATTEMPT: function FINALATTEMPT() {
+function FINALATTEMPT() {
     var FG = document.getElementById("FGbutton");
     FG.classList.toggle("zone");
     for (let d = 0; d < width; d++) {
