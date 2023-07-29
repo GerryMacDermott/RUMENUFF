@@ -128,8 +128,13 @@ function update() {
     }
     //check word is completed
     if (done == width) {
+        document.getElementById("answer").innerText = "You got it! You should be concerned...\n It took you " + failcount + " attempts";
+        FG.classList.toggle("win");
+        for (let d = 0; d < width; d++) {
+            let tilechange = document.getElementById(0 + "-" + d.toString());
+            tilechange.classList.add("tilecorrect");
+        }
         GameOver = true;
-        document.getElementById("answer").innerText = "You Win\n" + failcount + " attempts";
     }
     else if (done != width) {
         attempts -= 1;
