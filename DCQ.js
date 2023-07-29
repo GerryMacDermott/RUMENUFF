@@ -19,7 +19,7 @@ var questionarray = ["A mad old man is a skiers' delight", "To Make Employer Loo
     "Nation Governed By Former Sports' Judges", "Drum Encore (A Pleasing Result)", "Anthology Of Different Forms Of Poetry", "A Gang Of Owls", "A Hold Up In Egg Production", "Alternate Rock Group", "Announced Intention To Act (Marry, Perhaps)", "End Of Season Netball Party", "Proposal For Group Action (Gardening)", "Deodorised",
 ];
 var now = new Date();
-var start = new Date(now.getFullYear(), 6, 29);
+var start = new Date(now.getFullYear(), 6, 27);
 var diff = now - start;
 var oneDay = 1000 * 60 * 60 * 24;
 var day = Math.round(diff / oneDay);
