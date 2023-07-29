@@ -1,9 +1,9 @@
-header{
+header {
     background: url("picture.JPG");
     height: 100vh;
     background-size: cover;
     background-position: center center;
-    position: relative; 
+    position: relative;
 }
 
 
@@ -11,6 +11,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
+
 .bigger {
     font-size: 150%;
     font-style: italic;
@@ -30,13 +31,15 @@ li {
     display: inline-block;
     margin-right: 20px;
 }
-li a{
+
+li a {
     color: #333;
     text-decoration: none;
     padding: 5px 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
-li a:hover{
+
+li a:hover {
     background-color: #333;
     color: #fff;
     border-radius: 3px;
@@ -50,13 +53,15 @@ li a:hover{
     align-items: center;
     flex-direction: column;
 }
+
 #intro {
     width: 100%;
     max-width: 500px;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
+
 #example-area {
     width: auto;
     height: auto;
@@ -66,13 +71,15 @@ li a:hover{
     flex-wrap: wrap;
     justify-content: center;
 }
+
 #game {
     width: 100%;
-    max-width: 500px;
+    max-width: auto;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
+
 
 #title {
     font-size: 20px;
@@ -100,7 +107,7 @@ li a:hover{
     justify-content: center;
 }
 
-.guessrow{
+.guessrow {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -138,11 +145,30 @@ li a:hover{
 
 }
 
+.tilewrong {
+    border: 2px solid lightgray;
+    width: 50px;
+    height: 50px;
+    margin: 2.5px;
+    background-color: #ff0000;
+
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
 #FGbutton {
     font-family: 'Lucida Sans', 'Lucida Sans Bold', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: 0;
     padding: 10;
     height: 58px;
+    width: 500px;
     cursor: pointer;
     background-color: rgb(62, 62, 65);
     color: rgb(239, 241, 243);
@@ -153,6 +179,10 @@ li a:hover{
     align-items: center;
     transition-duration: 0.4s;
     cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
 }
 
 #FGbutton.win {
@@ -170,6 +200,12 @@ li a:hover{
 
 #keyboard-container {
     height: 200px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
 }
 
 .keyboard-row {
@@ -187,7 +223,7 @@ li a:hover{
     padding: 0;
     height: 58px;
     cursor: pointer;
-    background-color: rgb(129, 131, 132);
+    background-color: #5c594b;
     color: rgb(215, 218, 220);
     flex-grow: 1;
     text-transform: uppercase;
@@ -206,7 +242,7 @@ li a:hover{
 
 
 .keyboard-row button.absent {
-    background-color: #5c594b;
+    background-color: rgb(129, 131, 132);
 
 }
 
