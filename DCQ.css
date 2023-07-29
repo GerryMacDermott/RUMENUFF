@@ -50,6 +50,7 @@ li a:hover {
     display: flex;
     /*background-color: black;*/
     height: 100%;
+    width: 1000px;
     align-items: center;
     flex-direction: column;
 }
