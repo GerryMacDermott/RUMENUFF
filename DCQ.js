@@ -153,11 +153,9 @@ function update() {
             //if let is present display it
             let CurrentTile = document.getElementById(row + "-" + d.toString());
             done += 1;
-//setTimeout(() => {
             CurrentTile.innerText = lettercheck;
             CurrentTile.classList.add("tileflip")
             CurrentTile.classList.add("tilecorrect")
-            //},200)
             tilechange.classList.add("correct");
             wrongguess += 1;
         }
@@ -169,11 +167,9 @@ function update() {
         FG.classList.toggle("win");
         for (let d = 0; d < width; d++) {
             let tilechange = document.getElementById(0 + "-" + d.toString());
-           // setTimeout(() => {
                 CurrentTile.innerText = lettercheck;
                 CurrentTile.classList.add("tileflip")
                 CurrentTile.classList.add("tilecorrect")
-           //     },200)
         }
         GameOver = true;
     }
@@ -187,6 +183,9 @@ function update() {
         let tilechange = document.getElementById(lettercheck);
         tilechange.classList.add("absent");
         CurrentTile.innerText = "";
+        if (attempts == 0) {
+            lose();
+        } 
     }
 
     if (done != width){
@@ -194,8 +193,6 @@ function update() {
         emptyguesssquare.innerText = "";
         col -= 1;
     }
-            
-
 }
 
 
@@ -246,12 +243,7 @@ function FINALATTEMPT() {
                     GameOver = true;
                 }
                 else if (doneFINAL != width) {
-                    document.getElementById("answer").innerText = "You didn't get it... trust me that's a good thing!\n The correct answer was\n" + word;
-                    FG.classList.toggle("lose");
-                    for (let d = 0; d < width; d++) {
-                        let tilechange = document.getElementById(0 + "-" + d.toString());
-                        tilechange.classList.add("tilewrong");
-                    }
+                    lose();
                 }
             };
 
@@ -282,14 +274,35 @@ function FINALATTEMPT() {
     };
 };
 
-function lose(){
-    document.getElementById("answer").innerText = "You didn't get it... trust me that a good thing!\n The correct answer was\n" + word;
-    //FG.classList.toggle("lose");
-    for (let d = 0; d < width; d++) {
-        let tilechange = document.getElementById(0 + "-" + d.toString());
+function delaylose(d){
+    let tilechange = document.getElementById(0 + "-" + d.toString());
+    setTimeout(()=>{
+        tilechange.innerText = word[d];
+        tilechange.classList.add("tileflip");
         tilechange.classList.add("tilewrong");
+    },400*d)
+}
+
+
+function lose(){
+    document.getElementById("answer").innerText = "You didn't get it... trust me that a good thing!";
+    for (let d = 0; d < width; d++) {
+        delaylose(d);
     }
 };
 
 
+function delaycorrect(d){
+    let CurrentTile = document.getElementById(row + "-" + GuessTile.toString()); //may be redundant
+    let lettercheck = CurrentTile.innerText;
+    let Current2Tile = document.getElementById(row + "-" + d.toString());
+    let tilechange = document.getElementById(lettercheck);
+    done += 1;
+    setTimeout(()=>{
+        CurrentTile.innerText = lettercheck;
+        Current2Tile.classList.add("tileflip")
+        Current2Tile.classList.add("tilecorrect")
+        tilechange.classList.add("correct");
+    },400*d)
+}
 
