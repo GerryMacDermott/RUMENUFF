@@ -1,7 +1,8 @@
 //RUMENUFF
 
 
-//whats next? *finish inputting questions, *fix keyboard centering or find solution to long words, *improve presentation, *about author
+//whats next? *finish inputting questions, *improve presentation, *about author, *stop at 0 attempts
+// left it at getting flip to work at completion
 
 
 
@@ -18,6 +19,11 @@ var questionarray = ["A mad old man is a skiers' delight", "To Make Employer Loo
     "“Dad” Jokes (Lame But Kinda Sweet)", "Piece Of Music Sung Off- Key", "Security Escort In Money-Carrying Vehicle", "Pedal-Powered Vehicle; Used Only In Polar Regions", "Greedy (Always More!)", "Art School", "Happy Go Lucky Artist", "Japanese Game Of Strategy, The Aim Being To Cover All Moving Pieces", "A Mild Complaint (What's Your Beef About This?)", "The Cost Of Being A Groupie?",
     "Nation Governed By Former Sports' Judges", "Drum Encore (A Pleasing Result)", "Anthology Of Different Forms Of Poetry", "A Gang Of Owls", "A Hold Up In Egg Production", "Alternate Rock Group", "Announced Intention To Act (Marry, Perhaps)", "End Of Season Netball Party", "Proposal For Group Action (Gardening)", "Deodorised",
 ];
+
+
+
+
+///variables
 var now = new Date();
 var start = new Date(now.getFullYear(), 6, 27);
 var diff = now - start;
@@ -33,10 +39,11 @@ var colFINAL = 0;
 var row = 0;
 var done = 0;
 var failcount = 1;
-var attempts = word.length + 1;
+var attempts = 6; //incorrect letters in a set number
 var guessed = [];
 var letterwasguessedtrue = [];
 var doneFINAL = 0;
+var wrongguess = 0;
 guessed.length = GuessTile;
 const FG = document.querySelectorAll(".finalguess1 button");
 var FGlock = 0;
@@ -46,14 +53,24 @@ const todaysdate = new Date();
 const year = todaysdate.getFullYear;
 const month = todaysdate.getMonth;
 
+
+//onload
 window.onload = function () {
     game();
 }
 
+
+
+
+
+
+// game setup and listen for keys
 function game() {
     //Load question --> will be pulled from array eventually
     document.getElementById("question").innerText = "Today's Mindboggler:\n" + question;
     //Create word squares
+
+
     for (let r = 0; r < height; r++) {
         for (let c = 0; c < width; c++) {
             let tile = document.createElement("span");
@@ -69,12 +86,17 @@ function game() {
     Gtile.classList.add("tile");
     Gtile.innerText = "";
     document.getElementById("letter").appendChild(Gtile);
+    document.getElementById("answer").innerText = "You have " + attempts + " incorrect guesses remaining";
 
     //On-screen keyboard letter recognition
     const keys = document.querySelectorAll(".keyboard-row button");
     for (let i = 0; i < keys.length; i++) {
         keys[i].onclick = ({ target }) => {
             const keypressed = target.getAttribute("data-key");
+            
+            if (attempts == 0) {
+                lose();
+            } 
 
             //check if letter has already been used, otherwise submit guessed letter
             Enter: if (keypressed == "enter" && col == GuessTile) {
@@ -87,6 +109,7 @@ function game() {
                     }
                 }
                 guessed[0, attempts] = Gtile.innerText;
+                wrongguess = 0;
                 update();
             };
 
@@ -109,6 +132,13 @@ function game() {
     FG.onclick = function() {FINALATTEMPT()};
 }
 
+
+
+
+
+
+
+//check guess letter
 //This function is triggered when 'enter' is pressed and criteria is met. 
 function update() {
     //need a 'if attempts = 0' --> text on screen final guess!!
@@ -117,38 +147,67 @@ function update() {
         let lettercheck = CurrentTile.innerText;
         let tilechange = document.getElementById(lettercheck);
 
+
         //check letter is in word
         if (word[d] == lettercheck) {
             //if let is present display it
             let CurrentTile = document.getElementById(row + "-" + d.toString());
-            CurrentTile.innerText = lettercheck;
             done += 1;
+//setTimeout(() => {
+            CurrentTile.innerText = lettercheck;
+            CurrentTile.classList.add("tileflip")
+            CurrentTile.classList.add("tilecorrect")
+            //},200)
             tilechange.classList.add("correct");
+            wrongguess += 1;
         }
-    }
+    }        
+    
     //check word is completed
     if (done == width) {
-        document.getElementById("answer").innerText = "You got it! You should be concerned...\n It took you " + failcount + " attempts";
+        document.getElementById("answer").innerText = "You got it! ... You should be concerned\n It took you " + failcount + " attempts";
         FG.classList.toggle("win");
         for (let d = 0; d < width; d++) {
             let tilechange = document.getElementById(0 + "-" + d.toString());
-            tilechange.classList.add("tilecorrect");
+           // setTimeout(() => {
+                CurrentTile.innerText = lettercheck;
+                CurrentTile.classList.add("tileflip")
+                CurrentTile.classList.add("tilecorrect")
+           //     },200)
         }
         GameOver = true;
     }
-    else if (done != width) {
+
+    if (wrongguess == 0) {
         attempts -= 1;
-        document.getElementById("answer").innerText = "You have " + attempts + " attempts left!";
+        document.getElementById("answer").innerText = "You have " + attempts + " incorrect guesses remaining";
         failcount += 1;
-        col -= 1;
         let CurrentTile = document.getElementById(row + "-" + GuessTile.toString());
         let lettercheck = CurrentTile.innerText;
         let tilechange = document.getElementById(lettercheck);
         tilechange.classList.add("absent");
         CurrentTile.innerText = "";
     }
+
+    if (done != width){
+        let emptyguesssquare = document.getElementById(row + "-" + GuessTile.toString());
+        emptyguesssquare.innerText = "";
+        col -= 1;
+    }
+            
+
 }
 
+
+
+
+
+
+
+
+
+
+//final attempt
 function FINALATTEMPT() {
     var FG = document.getElementById("FGbutton");
     FG.classList.toggle("zone");
@@ -178,7 +237,7 @@ function FINALATTEMPT() {
                     }
                 }
                 if (doneFINAL == width) {
-                    document.getElementById("answer").innerText = "You got it! You should be concerned...\n It took you " + failcount + " attempts";
+                    document.getElementById("answer").innerText = "You got it! ... You should be concerned\n It took you " + failcount + " attempts";
                     FG.classList.toggle("win");
                     for (let d = 0; d < width; d++) {
                         let tilechange = document.getElementById(0 + "-" + d.toString());
@@ -187,7 +246,7 @@ function FINALATTEMPT() {
                     GameOver = true;
                 }
                 else if (doneFINAL != width) {
-                    document.getElementById("answer").innerText = "You didn't get it... trust me that a good thing!\n The correct answer was\n" + word;
+                    document.getElementById("answer").innerText = "You didn't get it... trust me that's a good thing!\n The correct answer was\n" + word;
                     FG.classList.toggle("lose");
                     for (let d = 0; d < width; d++) {
                         let tilechange = document.getElementById(0 + "-" + d.toString());
@@ -222,5 +281,15 @@ function FINALATTEMPT() {
         };
     };
 };
+
+function lose(){
+    document.getElementById("answer").innerText = "You didn't get it... trust me that a good thing!\n The correct answer was\n" + word;
+    //FG.classList.toggle("lose");
+    for (let d = 0; d < width; d++) {
+        let tilechange = document.getElementById(0 + "-" + d.toString());
+        tilechange.classList.add("tilewrong");
+    }
+};
+
 
 

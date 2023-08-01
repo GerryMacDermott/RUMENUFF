@@ -30,16 +30,34 @@ ul {
 li {
     display: inline-block;
     margin-right: 20px;
+    text-decoration: none;
+    color: #000000;
 }
 
-li a {
+li a.one {
+    color: #ffffff;
+    background-color: #1e8100;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li a.one:hover {
+    background-color: rgb(21, 255, 0);
+    color: #000000;
+    border-radius: 3px;
+    transition-duration: 500ms;
+}
+
+
+li a{
     color: #333;
     text-decoration: none;
     padding: 5px 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-li a:hover {
+li a:hover{
     background-color: #333;
     color: #fff;
     border-radius: 3px;
@@ -88,6 +106,7 @@ li a:hover {
     letter-spacing: 1.5px;
 }
 
+
 #guess {
     width: auto;
     height: auto;
@@ -107,6 +126,7 @@ li a:hover {
     flex-wrap: wrap;
     justify-content: center;
 }
+
 
 .guessrow {
     width: 100%;
@@ -162,7 +182,21 @@ li a:hover {
 
 }
 
+.tileflip {
+    animation: 0.7s linear flipping;
+}
 
+@keyframes flipping {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
 
 #FGbutton {
     font-family: 'Lucida Sans', 'Lucida Sans Bold', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
