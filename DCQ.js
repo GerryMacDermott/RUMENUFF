@@ -169,7 +169,11 @@ function update() {
 
     if (wrongguess == 0) {
         attempts -= 1;
+        if (attempts == 1){
+            document.getElementById("answer").innerText = "You Have " + attempts + " Incorrect Guess Remaining";
+        } else{
         document.getElementById("answer").innerText = "You Have " + attempts + " Incorrect Guesses Remaining";
+        }
         failcount += 1;
         let CurrentTile = document.getElementById(row + "-" + GuessTile.toString());
         CurrentTile.classList.add("tileshake");
@@ -331,7 +335,7 @@ function correct() {
        // copyText.setSelectionRange(0, 99999); // For mobile devices
         navigator.clipboard.writeText(copyText);
         navigator.share({text: copyText});
-        alert("Your Results were Copied to Clipboard");
+       // alert("Your Results were Copied to Clipboard");
     }; 
     document.getElementById("score").appendChild(buttoncreate)
 }
