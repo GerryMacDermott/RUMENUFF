@@ -72,7 +72,7 @@ li a:hover{
 #container {
     display: flex;
     /*background-color: black;*/
-    height: 100%;
+    height: auto;
     width: 100%;
     align-items: center;
     flex-direction: column;
