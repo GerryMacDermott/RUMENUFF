@@ -144,6 +144,7 @@ function update() {
     //need a 'if attempts = 0' --> text on screen final guess!!
     for (let d = 0; d < width; d++) {
         let CurrentTile = document.getElementById(row + "-" + GuessTile.toString()); //may be redundant
+        CurrentTile.classList.remove("tileshake");
         let lettercheck = CurrentTile.innerText;
         let tilechange = document.getElementById(lettercheck);
 
@@ -171,6 +172,7 @@ function update() {
         document.getElementById("answer").innerText = "You Have " + attempts + " Incorrect Guesses Remaining";
         failcount += 1;
         let CurrentTile = document.getElementById(row + "-" + GuessTile.toString());
+        CurrentTile.classList.add("tileshake");
         let lettercheck = CurrentTile.innerText;
         let tilechange = document.getElementById(lettercheck);
         tilechange.classList.add("absent");
@@ -275,6 +277,16 @@ function lose() {
     for (let d = 0; d < width; d++) {
         delaylose(d);
     }
+    let buttoncreate = document.createElement('button');
+    buttoncreate.id = "sharebutton";
+    buttoncreate.innerText = "Share Score";
+    buttoncreate.classList.add("scoreshare");
+    buttoncreate.onclick = function(){
+        var copyText = "RUMENUFF: ❌ I'm Not MAD!\nhttps://rumenuff.com/"
+        navigator.clipboard.writeText(copyText);
+        alert("Copied the text: " + copyText);
+    }; 
+    document.getElementById("score").appendChild(buttoncreate)
 };
 
 function correct() {
@@ -287,25 +299,39 @@ function correct() {
     // print specific message per amount of mistakes
     for (let e = 0; e < width; e++) {
         if (failcount == 0) {
-            document.getElementById("answer").innerText = "Marvelous! \n Completed with " + failcount + " mistakes \n You are indeed mad enuff";
+            document.getElementById("answer").innerText = "Marvelous! \n Completed with " + failcount + " mistakes \n You are indeed MAD ENUFF";
+            var copyText = "RUMENUFF: ✅ I'm Mad Enuff!\nhttps://rumenuff.com/"
         }
         if (failcount == 1) {
             document.getElementById("answer").innerText = "Magnificent! \n Completed with only " + failcount + " mistake";
+            var copyText = "RUMENUFF: ❌✅\nhttps://rumenuff.com/"
         }
         if (failcount == 2) {
             document.getElementById("answer").innerText = "Brilliant! \n Completed with only " + failcount + " mistakes";
+            var copyText = "RUMENUFF: ❌❌✅\nhttps://rumenuff.com/"
         }
         if (failcount == 3) {
             document.getElementById("answer").innerText = "Congratulations! \n Completed with only " + failcount + " mistakes";
+            var copyText = "RUMENUFF: ❌❌❌✅\nhttps://rumenuff.com/"
         }
         if (failcount == 4) {
             document.getElementById("answer").innerText = "Top Job! \n Completed with " + failcount + " mistakes";
+            var copyText = "RUMENUFF: ❌❌❌❌✅\nhttps://rumenuff.com/"
         }
         if (failcount == 5) {
             document.getElementById("answer").innerText = "Scraped it Home! \n Completed with " + failcount + " mistakes";
+            var copyText = "RUMENUFF: ❌❌❌❌❌✅\nhttps://rumenuff.com/"
         }
     }
-
+    let buttoncreate = document.createElement('button');
+    buttoncreate.id = "sharebutton";
+    buttoncreate.innerText = "Share Score";
+    buttoncreate.classList.add("scoreshare");
+    buttoncreate.onclick = function(){
+        navigator.clipboard.writeText(copyText);
+        alert("Copied the text: " + copyText);
+    }; 
+    document.getElementById("score").appendChild(buttoncreate)
 }
 
 

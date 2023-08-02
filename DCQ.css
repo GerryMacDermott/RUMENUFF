@@ -213,6 +213,17 @@ li a:hover{
     }
 }
 
+.tileshake {
+    animation: 0.3s horizontal-shaking;
+}
+@keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+  }
+
 #FGbutton {
     font-family: 'Lucida Sans', 'Lucida Sans Bold', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: 0;
@@ -299,4 +310,22 @@ li a:hover{
 
 .keyboard-row button.correct {
     background-color: #3e8e41;
+}
+
+
+.scoreshare {
+    color: #ffffff;
+    background-color: #1e8100;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: 'Gill Sans', sans-serif;
+    font-size: 20px;
+}
+
+.scoreshare:hover {
+    background-color: rgb(16, 189, 0);
+    color: #000000;
+    transition-duration: 500ms;
+    font-size: 20px;
 }
