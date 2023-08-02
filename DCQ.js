@@ -328,8 +328,10 @@ function correct() {
     buttoncreate.innerText = "Share Score";
     buttoncreate.classList.add("scoreshare");
     buttoncreate.onclick = function(){
+       // copyText.setSelectionRange(0, 99999); // For mobile devices
         navigator.clipboard.writeText(copyText);
-        alert("Copied the text: " + copyText);
+        navigator.share({text: copyText});
+        alert("Your Results were Copied to Clipboard");
     }; 
     document.getElementById("score").appendChild(buttoncreate)
 }
