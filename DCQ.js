@@ -283,7 +283,7 @@ function delaylose(d) {
 
 
 function lose() {
-    document.getElementById("answer").innerText = "You didn't get it... trust me that's a good thing!";
+        document.getElementById("answer").innerText = "You didn't get it... but at least you've still got a grip on reality!";
     for (let d = 0; d < width; d++) {
         delaylose(d);
     }
