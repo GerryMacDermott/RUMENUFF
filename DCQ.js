@@ -320,7 +320,7 @@ function correct() {
     // print specific message per amount of mistakes
     for (let e = 0; e < width; e++) {
         if (failcount == 0) {
-            document.getElementById("answer").innerText = "Marvelous! \n Completed with " + failcount + " mistakes \n You are indeed MAD ENUFF";
+            document.getElementById("answer").innerText = "Marvellous! \n Completed with " + failcount + " mistakes \n You are indeed MAD ENUFF";
             var copyText = "RUMENUFF: ✅ I'm Mad Enuff!\nhttps://rumenuff.com/"
         }
         if (failcount == 1) {
