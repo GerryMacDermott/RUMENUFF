@@ -13,11 +13,15 @@ var wordarray = ["SNOWIE", "EMBOSS", "PASTEURISED", "CANOODLE", "UNBIASSED", "CA
     "LEMONADE", "PLATONIC", "ACUPUNCTURE", "MILKSHAKE", "HYPERBOLE", "RASHER", "TOURNIQUET", "PUNT", "STAGECOACH", "LEGENDS",
     "POPCORN", "MALADY", "VANGUARD", "ICICLE", "NEVERTHELESS", "COLLAGE", "EASEL", "KIMONO", "LAMB", "FANFARE",
     "UMPIRE", "REPERCUSSION", "DIVERSE", "CAHOOT", "DELAY", "CONTRABAND", "AISLE", "HOOPLA", "LETTUCE", "EXTINCT",
+    "SOMBRERO", "BELITTLE", "STOREY", "TOTEM", "CHAMPIGNON", "FURNACE", "RACKETEER", "JOURNEYMAN", "DEADPAN", "WINSOME",
+    ""
 ];
 var questionarray = ["A mad old man is a skiers' delight", "To Make Employer Look Good", "A Purely Fleeting Glimpse", "Small Love-Boat for Quiet Waterways", "Lacking In Lawn-Bowl Skills (Judgmental?)", "Theatre Understudies' Dream Come True (No More Isolation)", "Pursued In A Purely Innocent Manner", "High Spirited Termite (Feeling Bullet Proof)", "Selection Committee For Olympic Field Events", "Constant Nuisance - Always Close By (Deserves A Real Spray)",
     "Manual For Shonky Car Dealers", "Refreshing Drink Created In Ancient Greece, Said To Reduce Libido", "Bicycle Repair Kit; Made In China", "Greeting Between Dairy Farmers", "Large, Often Overpriced Flowerpot (Visual Poetry)", "Risk Taker (Perhaps To Bring Home The Bacon)", "Word For A Group Of Paramedics (Might Feel The Pressure On This One)", "Small River-Boat For Modest Gamblers (Pole Position - Best Bet)", "Drama Instructor For Group Of Travelling Players", "Feet (Of The Famous Perhaps)",
     "“Dad” Jokes (Lame But Kinda Sweet)", "Piece Of Music Sung Off- Key", "Security Escort In Money-Carrying Vehicle", "Pedal-Powered Vehicle; Used Only In Polar Regions", "Greedy (Always More!)", "Art School", "Happy Go Lucky Artist", "Japanese Game Of Strategy, The Aim Being To Cover All Moving Pieces", "A Mild Complaint (What's Your Beef About This?)", "The Cost Of Being A Groupie?",
     "Nation Governed By Former Sports' Judges", "Drum Encore (A Pleasing Result)", "Anthology Of Different Forms Of Poetry", "A Gang Of Owls", "A Hold Up In Egg Production", "Alternate Rock Group", "Announced Intention To Act (Marry, Perhaps)", "End Of Season Netball Party", "Proposal For Group Action (Gardening)", "Deodorised",
+    "A Serious Mexican (If The Cap Fits …)", "Proud Mantra Of Vertically Challenged People", "Official History Of High Rise Construction", "Specially Designed Vehicle For The Transport Of Sacred Objects", "Winner Of The Mushroom Growers' Award", "Gamblers' Lucky Streak (Hot!)", "Tennis Player On The Take", "Competent Tour Guide (Not Showy)", "Burnt-Out Cooking Utensil", "Stylish And Fairly Successful Sports Team",
+    ""
 ];
 
 
@@ -272,6 +276,8 @@ function FINALATTEMPT() {
     };
 };
 
+
+//if final guess is wrong or run out of guesses
 function delaylose(d) {
     let tilechange = document.getElementById(0 + "-" + d.toString());
     setTimeout(() => {
@@ -281,12 +287,14 @@ function delaylose(d) {
     }, 400 * d)
 }
 
-
 function lose() {
-        document.getElementById("answer").innerText = "You didn't get it... but at least you've still got a grip on reality!";
+    document.getElementById("answer").innerText = "You didn't get it... but at least you've still got a grip on reality!";
     for (let d = 0; d < width; d++) {
+        let tilechange = document.getElementById(0 + "-" + d.toString());
+        tilechange.classList.remove("tileflip");
         delaylose(d);
     }
+
     let buttoncreate = document.createElement('button');
     buttoncreate.id = "sharebutton";
     buttoncreate.innerText = "Share Score";
@@ -299,23 +307,23 @@ function lose() {
     document.getElementById("score").appendChild(buttoncreate)
 };
 
+
+//if answer is correct
 function delaycorrect(d) {
     let tilechange = document.getElementById(0 + "-" + d.toString());
     setTimeout(() => {
+        //tilechange.classList.remove("tileflip");
         tilechange.classList.add("tileflip");
         tilechange.classList.add("tilecorrect");
     }, 400 * d)
 }
 
-
-
 function correct() {
     // flip all letters at end
     for (let d = 0; d < width; d++) {
+        let tilechange = document.getElementById(0 + "-" + d.toString());
+        tilechange.classList.remove("tileflip");
         delaycorrect(d);
-        //let CurrentTile = document.getElementById(0 + "-" + d.toString());
-        //CurrentTile.classList.add("tileflip")
-        //CurrentTile.classList.add("tilecorrect")
     }
     // print specific message per amount of mistakes
     for (let e = 0; e < width; e++) {
@@ -357,19 +365,4 @@ function correct() {
     document.getElementById("score").appendChild(buttoncreate)
 }
 
-
-
-/*function delaycorrect(d) {
-    let CurrentTile = document.getElementById(row + "-" + GuessTile.toString()); //may be redundant
-    let lettercheck = CurrentTile.innerText;
-    let Current2Tile = document.getElementById(row + "-" + d.toString());
-    let tilechange = document.getElementById(lettercheck);
-    done += 1;
-    setTimeout(() => {
-        CurrentTile.innerText = lettercheck;
-        Current2Tile.classList.add("tileflip")
-        Current2Tile.classList.add("tilecorrect")
-        tilechange.classList.add("correct");
-    }, 400 * d)
-}*/
 

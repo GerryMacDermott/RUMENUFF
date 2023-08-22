@@ -88,6 +88,11 @@ li a:hover{
     flex-direction: column;
 }
 
+#question {
+    font-size: larger;
+    font-weight: bold;
+}
+
 #example-area {
     width: auto;
     max-width: 500px;
