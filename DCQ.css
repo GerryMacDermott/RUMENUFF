@@ -34,7 +34,7 @@ ul {
 
 li {
     display: inline-block;
-    margin-right: 20px;
+ 
     text-decoration: none;
     color: #000000;
 }
@@ -333,4 +333,24 @@ li a:hover{
     color: #000000;
     transition-duration: 500ms;
     font-size: 20px;
+}
+
+.levelselect {
+    width: 50px;
+    height: 30px;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.levelbutton {
+    color: #ffffff;
+    background-color: #1e8100;
+    text-decoration: none;
+    position: relative;
+    left: 5px;
+    border-radius: 3px;
+    padding: 3px 5px;
+    font-family: 'Gill Sans', sans-serif;
+    font-size: 18px;
 }

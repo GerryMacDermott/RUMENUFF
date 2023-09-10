@@ -35,10 +35,6 @@ var questionarray = ["A mad old man is a skiers' delight", "To Make Employer Loo
     "2 more on row above"
 ];
 
-
-
-
-///variables
 var now = new Date();
 var start = new Date(now.getFullYear(), 6, 27);
 var diff = now - start;
@@ -64,14 +60,59 @@ guessed.length = GuessTile;
 var FGlock = 0;
 const tileDisplay = document.querySelectorAll(".example-area");
 var GameOver = false;
-const todaysdate = new Date();
-const year = todaysdate.getFullYear;
-const month = todaysdate.getMonth;
-
 
 //onload
 window.onload = function () {
-    game();
+    chooselevel();
+}
+
+
+function chooselevel() {
+    //create levelselect dropdown
+    document.getElementById("question").innerText = "Choose a Puzzle Number Above to Get Started!"
+    var levelselect = document.getElementById("levelselect");
+    levelselect.innerText = "Want to try a Previous Question?\nEnter a Puzzle Nummber Between 1 - " + day + ":  ";
+    var input = document.createElement("input");
+    input.type = "text";
+    input.id = "levelinput"
+    input.placeholder = "1 - " + day;
+    input.classList.add("levelselect");// need to set CSS style
+    levelselect.appendChild(input);
+    var levelbutton = document.createElement("button");
+    levelbutton.innerText = "Choose!"
+    levelbutton.classList.add("levelbutton");
+    levelbutton.addEventListener("click", function () {
+        day = document.getElementById("levelinput").value;
+        //alert("In event listner");
+        console.log(day);
+        ///variables
+        word = wordarray[day];
+        question = questionarray[day];
+        width = word.length; //length of the word
+        GuessTile = word.length + 1; //allows the creation of the 'guessing tile'
+        col = word.length;
+        guessed.length = GuessTile;
+        done = 0;
+        failcount = 0;
+        attempts = 6; //incorrect letters in a set number
+        guessed = [];
+        letterwasguessedtrue = [];
+        doneFINAL = 0;
+        wrongguess = 0;
+        FGlock = 0;
+        colFINAL = 0;
+        var FG = document.getElementById("FGbutton");
+        FG.classList.remove("zone");
+
+        const keys = document.querySelectorAll(".keyboard-row button");
+        for(let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("absent");
+            keys[i].classList.remove("correct");}
+        game();
+    });
+    levelselect.appendChild(levelbutton);
+
+
 }
 
 
@@ -80,7 +121,7 @@ window.onload = function () {
 function game() {
     //Load question --> will be pulled from array eventually
     document.getElementById("question").innerText = "Today's Mindboggler - Question " + day + ":\n" + question;
-
+    document.getElementById("guess").innerHTML = "";
     //Create word squares
     for (let r = 0; r < height; r++) {
         for (let c = 0; c < width; c++) {
@@ -93,6 +134,7 @@ function game() {
     }
 
     //Create Guessing square
+    document.getElementById("letter").innerHTML = "";
     let Gtile = document.createElement("span");
     Gtile.id = row + "-" + GuessTile.toString();
     Gtile.classList.add("tile");
@@ -100,7 +142,6 @@ function game() {
     document.getElementById("letter").appendChild(Gtile);
     document.getElementById("answer").innerText = "You Have " + attempts + " Incorrect Guesses Remaining";
 
-    
     //On-screen keyboard letter recognition
     const keys = document.querySelectorAll(".keyboard-row button");
     for (let i = 0; i < keys.length; i++) {
@@ -220,7 +261,7 @@ function update() {
 //final attempt
 function FINALATTEMPT() {
     FGlock = 1;
-    document.getElementById("FGbutton").removeAttribute("onlcick");
+   // document.getElementById("FGbutton").removeAttribute("onlcick");
     var FG = document.getElementById("FGbutton");
     FG.classList.add("zone");
     for (let d = 0; d < width; d++) {
