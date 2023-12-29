@@ -1,9 +1,9 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>RUMENUFF</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUMENUFF</title>
     <link rel="stylesheet" href="DCQ.css">
     <link rel="icon" href="icon.png">
     <link rel="shortcut icon" href="icon.ico">
@@ -12,28 +12,76 @@
 
 <body>
     <div id="container">
-        <h1>R U MAD ENOUGH<br>FOR<br><span class='bigger'>RUMENUFF?</span></h1>
+        <!-- Wrap each section of text in a div with the animate-text class -->
+        <div id="title">
+            <h1>
+                <span class="word animate-text">R</span>
+                <span class="word animate-text">U</span>
+                <span class="word animate-text">MAD</span>
+                <span class="word animate-text">ENOUGH</span>
+                <br><span class="word animate-text">FOR</span><br>
+                <span class="bigger animate-text">RUMENUFF?</span>
+            </h1>
+        </div>
         <div id="intro">
             <br>
-            <h2>The word game for those who think outside the planet.</h2>
-            <p><ins>How to play:</ins> We give a word an entirely new definition. Your task is to figure out the word!
-                You are able to ask for 1 letter at a time and you have 6 incorrect guesses to find the whackily redefined word. Select your letter from the keyboard on screen and then press the enter button if you are happy.<br>
-                When you think you've got it, press the final attempt button and have a crack, but you'll only get one
-                shot at this!<br>
-                Here is an example:<br><br>
-                QUESTION: "Educated, Tense Person"<br>
-                ANSWER: Taut<br><br>
-                Now you know how it works, good luck and there will be a new word waiting for you each day!</p>
-            <div id="example-area">
+            <div class="animate-text">
+                <h2>The word game for those who think outside the planet.</h2>
+                <p><ins>How to play:</ins> We give a word an entirely new definition. Your task is to figure out the word!
+                    You are able to ask for 1 letter at a time and you have 6 incorrect guesses to find the whackily
+                    redefined word. Select your letter from the keyboard on screen and then press the enter button if you
+                    are happy.<br> When you think you've got it, press the final attempt button and have a crack, but
+                    you'll only get one shot at this!<br> Here is an example:<br><br> QUESTION: "Educated, Tense Person"<br>
+                    ANSWER: Taut<br><br> Now you know how it works, good luck and there will be a new word waiting for
+                    you each day!</p>
+            </div>
+            <div class="animate-text" id="example-area">
             </div>
         </div>
         <nav>
             <ul id="navigation">
-                Ready to play? <li><a class="one" href="Game.html">Let's Go!</a></li>
+                <!-- Apply the class to the navigation as well -->
+                <li class="animate-text">Ready to play? <a class="one" href="Game.html">Let's Go!</a></li>
                 <!--<br><br><li><a href="About.html">About the Author</a></li> -->
             </ul>
         </nav>
     </div>
+
+    <audio id="sound" src="wordsound.mp3"></audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select elements with the animate-text class
+            const animatedElements = document.querySelectorAll('.animate-text');
+            const sound = document.getElementById('sound');
+
+            // Function to animate text elements sequentially
+            timedelay = 500;
+            function animateTextSequentially(index) {
+                if (index < animatedElements.length) {
+                    const element = animatedElements[index];
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                    index++;
+
+                    if (index == 5) {
+                        timedelay = 1000;
+                    }
+                    // Call the function recursively with a delay
+                    setTimeout(() => {
+                      animateTextSequentially(index);
+                      //sound.play();
+                    }, timedelay); // Adjust the delay as needed
+                }
+            }
+
+            // Call the animateTextSequentially function with an initial index of 0
+            animateTextSequentially(0);
+        });
+
+
+
+    </script>
 </body>
 
 </html>

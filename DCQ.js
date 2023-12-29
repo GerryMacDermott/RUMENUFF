@@ -239,9 +239,9 @@ function update() {
 //final attempt
 function FINALATTEMPT() {
     FGlock = 1;
-    document.getElementById("FGbutton").removeAttribute("onlcick");
     var FG = document.getElementById("FGbutton");
     FG.classList.add("zone");
+    FG.onclick = null;
     for (let d = 0; d < width; d++) {
         let CurrentTile = document.getElementById(row + "-" + d.toString());
         if (CurrentTile.innerText != "") {

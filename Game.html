@@ -8,29 +8,32 @@
 <link rel="apple-touch-icon" href="icon.png">
 <script src="DCQ.js"></script>
 
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B9DDJ641CX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-B9DDJ641CX');
-    </script>
 
+<head>
     <title>RUMENUFF</title>
 </head>
 
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LHHRMW8BBP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LHHRMW8BBP');
+</script>
+
 <body>
     <div id="container">
-        <h1>RUMENUFF</h1>
+        <h1 class="animate-text">RUMENUFF</h1>
         <nav>
-            <ul>
+            <ul class="animate-text">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="PreviousQ.html">Previous Questions</a></li>
             </ul>
         </nav>
-        <div id="game">
+        <div id="game" class="animate-text">
             <hr>
             <div id="question"></div>
             <hr>
@@ -40,7 +43,7 @@
             <div id="letter"></div>
             <div id="answer"></div>
             <br>
-            <div id="keyboard-container">
+            <div id="keyboard-container" class="animate-text">
                 <div class="keyboard-row">
                     <button id="Q" data-key="Q">Q</button>
                     <button id="W" data-key="W">W</button>
@@ -84,6 +87,34 @@
         <div id="score">
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select elements with the animate-text class
+            const animatedElements = document.querySelectorAll('.animate-text');
+
+            // Function to animate text elements sequentially
+            timedelay = 400;
+            function animateTextSequentially(index) {
+                if (index < animatedElements.length) {
+                    const element = animatedElements[index];
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+
+                    // Call the function recursively with a delay
+                    setTimeout(() => {
+                      animateTextSequentially(index);
+                    }, timedelay); // Adjust the delay as needed
+                }
+            }
+
+            // Call the animateTextSequentially function with an initial index of 0
+            animateTextSequentially(0);
+        });
+
+
+
+    </script>
 </body>
 
 </html>
