@@ -55,7 +55,7 @@ var questionarray = ["A mad old man is a skiers' delight", "To Make Employer Loo
 ];
 
 var now = new Date();
-var start = new Date(now.getFullYear(), 6, 27);
+var start = new Date(2023, 6, 27);
 var diff = now - start;
 var oneDay = 1000 * 60 * 60 * 24;
 var day = Math.ceil(diff / oneDay);
