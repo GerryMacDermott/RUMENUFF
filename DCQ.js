@@ -29,6 +29,17 @@ var wordarray = ["SNOWIE", "EMBOSS", "PASTEURISED", "CANOODLE", "UNBIASSED", "CA
     "KETCH", "CONCERTINA", "PALINDROME", "MASK", "DEARTH", "ECLIPSE", "UNICORN", "MAUDLIN", "FOOTLOOSE", "LIKEWISE", 
     "PARALLELS", "INDENTURED", "MIGHTIEST", "ARTLESS", "THRONGS", "RAMIFICATIONS", "ATOLL", "EDIFICE", "CARP", "ARTEFACTS", 
     "HUMDRUM", "PERUSE", "ABUNDANCE", "RETROGRADE", 
+    "MEATLOAF", "BARTENDER", "CASTOFFS", "RHUBARB", "ARBORIST", "GRASSHOPPER", "FEARSOME", "BRANDISH", "CARBONCOPY", "GATE", 
+    "ANTIDOTE", "MUSTY", "PAJAMAS", "TIMEPIECE", "SPOKESPERSON", "FERRETS", "AMENITIES", "PENULTIMATE", "RESTITUTION", "NIGHTINGALE", 
+    "RATIFY", "PASSE", "PIECEMEAL", "WELLWISHER", "BALLISTIC", "EXTRACTIONS", "RATTLED", "FATHOM", "FORBID", "SAMPAN", 
+    "INHIBITION", "DOUGHNUTS", "BACKSLIDER", "AVERSION", "ASSET", "MICROCHIPS", "HARRY", "FOOTNOTES", "OPTIMIST", "ESTIMATE", 
+    "IRIS", "WRISTWATCH", "COWARDICE", "PRIVATIONS", "WISHBONE", "PULSATING", "PLUSFOURS", "CARNIVORE", "COMPOSITE", "BAROQUE", 
+    "ADVICE", "LISTLESS", "LEMMINGS", "LICHEN", "HEARSAY", "CARTON", "SPEAKEASY", "CARDIOLOGIST", "FOOLPROOF", "CALIBRATE", 
+    "GRIZZLED", "MOTIONLESS", "RADIOACTIVE", "VAMOOSE", "CLOCKWISE", "COLLUSION", "EYEFUL", "INSTRUMENTS", "AFTERMATH", "GUSHER", 
+    "HAPHAZARD", "BIRTHRIGHT", "HEARTBURN", "IMMATERIAL", "SHUCKS", "JOINERY", "COPOUT", "ROTUNDA", "FREEFORALL", "DUNGAREES", 
+    "CONDESCENDING", "DEBUNK", "CURSOR", "CARNATION", "FOLLY", "FALSETTO", "FLEETING", "AFTERTHOUGHT", "RUNAROUND", "TREADMILL", 
+    "BARCODE", "ESCARGOT", "DISSEMBLE", "EARTHBOUND", "DECIDUOUS", "GARBAGE", "SWANSONG", "KINSHIP", 
+    
 ];
 
 var questionarray = ["A mad old man is a skiers' delight", "To Make Employer Look Good", "A Purely Fleeting Glimpse", "Small Love-Boat for Quiet Waterways", "Lacking In Lawn-Bowl Skills (Judgmental?)", "Theatre Understudies' Dream Come True (No More Isolation)", "Pursued In A Purely Innocent Manner", "High Spirited Termite (Feeling Bullet Proof)", "Selection Committee For Olympic Field Events", "Constant Nuisance - Always Close By (Deserves A Real Spray)",
@@ -51,7 +62,17 @@ var questionarray = ["A mad old man is a skiers' delight", "To Make Employer Loo
     "19th Century Customs Patrol Ship (No Release Here)", "Brief Musical Soiree", "Friendly Airport Employee, Farewelling And Greeting Alike", "Question In Disguise", "Soil Lacking In Nutrients", "Master Barber (Blots Out Rivals)", "Undergraduate Humour (Sharp; One Dimensional)", "Violin For Sentimental Songs", "Requiring Ankle Surgery (Tightening Needed)", "Clever At Choosing", 
     "Shy People, Impossible To Meet At Any Given Point (Except When Travelling On The Same Plane)", "Fitted With False Teeth (Apprentice-Made I'Ll Be Bound)", "Extremely Indecisive", "Painter Who Has Simply Sold Out", "Casual Footwear With Mass Appeal", "Protective Holding Pen For Stud Merino Sheep", "Levy On Visitors To Great Barrier Reef", "Complex About Entering Tall Buildings", "Constantly Complainging Fisherperson", "Gossip Column About Pretentious Theatre-Set", 
     "Percussion Instrument To Accompany The Bagpipes (Fairly Mundane)", "Library Levy Imposed On Each Visit (So Browse For Hours)", "Baker'S Traditional Jig/Reel (A Rich Tradition)", "Has Class In The Old Fashioned Way", 
-    "only 4 in above row"
+    "Smoko At The Abattoirs (Just Taking It Easy)", "Kind Hearted Beerpuller ", "Knitters Made Redundant", "A Tart Jibe (May Plant A Wound)", "Branch Manager (Leaves Nothing Undone)", "Nickname Of Lawn Bowls Skipper (Can Plague Opponents)", "Not Entirely Brave", "Breakfast Bowl For Regular Guys And Gals", "Fake Diamond (Duplicated)", "Open And Shut Case", 
+    "Opposed To People-Adoration (Especially Of Babies)", "Driven By Sense Of Obligation (Sometimes Feels A Little Stale)", "Replacements For The Night-Shift", "A Quarter Of An Hour; Or A Half; Or A …", "Publicity Officer For Bicycle Club", "Very Poor Cricket Batter; Even Goes In After The Rabbits", "Way-Side Chapels", "Best Ever Writing Implement (Maybe Second Best)", "Make Up Department", "Nocturnal Cyclonic Experience (My Heart Leapt)", 
+    "To Sign Off With Pest Controller", "Outmoded Football Move (Acute Thinking Needed)", "Progressive Dinner", "Water Diviner", "Out Of Control Football-Club Supporter", "Excerpts From Dentist'S Memoirs", "Disturbed By Baby'S Playing", "Aquatic Work-Out Designed For Six-Footers", "Up For Auction (Reserve Somewhat Prohibitive)", "Vessel Full Of Chinese Junk-Food", 
+    "Art Showing In Private Gallery (A Reserve On Each Work)", "Wholly Obsessed With Money Making", "Inept Ice-Skater (Shouldn'T Have Dodged Practice)", "One Person'S Account (Reluctantly Given)", "Small But Valuable Beast Of Burden", "Very Tiny Hot Crisps (Easily Reheated)", "To Pester In A Right Royal Manner", "Chiropodist'S Diary", "Light Fog Likely To Lift Soon", "Perceived As A Friend", 
+    "The Girl In Everyone'S Eyes", "Off Hand Observation", "Extreme Fear Of The Cold", "Hardships Of The Lowest Ranked Soldier", "A Fancy Joint", "Gobbling Up The Legumes (Done In A Heart Beat)", "Expert Golfers Playing In Traditional Garb", "Always Goes Against The Grain (Food For Thought)", "Where Workers' Accident Benefits Are Paid (With Mixed Results)", "Bankrupt Through Over-Spending On Flamboyant Artworks", 
+    "An Addition To Your Bad Habits (You'Re In Their Grip)", "Without A Written Schedule (Result Of Apathy?)", "Citrus Trees Whose Whole Crop Falls Almost Simultaneously", "To Befriend A Botanist", "Talking Parrot (So It'S Said)", "Three Panel Comic Strip Reduced To Two", "Speech Therapist'S Office (Often In Secluded Location)", "Specialist Bridge Player (Favours Hearts As Trumps)", "Evidence Of Stupidity", "To Celebrate In A Measured Tone", 
+    "Encountered A North American Bear (Still Complaining)", "Non Eventful Agm (Everything Just Lapsed)", "Very Busy On The Air-Waves (To Glowing Reviews)", "Rapidly Disappearing Large-Antlered North American Deer", "Sage Time-Manager", "Conspiracy To Scam Auto-Accident Insurers", "A Summation Of The Paris Skyline", "Band Aids (Essentials)", "Recess Following Algebra (Or Arithmetic, ….) Lesson", "Flatterer Of Oil Tycoon", 
+    "Natural Random Obstructions On Golf Course", "Successful Baby Delivery (As It Should Be)", "Internal Combustion (It'S Personal)", "Wastage On Dressmaker'S Floor (Relevance?)", "Nickname Of Shy Oyster Opener", "A Club For Clubbers (They Fit In Easily)", "Police Industrial Strike (Excuse For Extra Holiday?)", "Tighter In The Girth (But Still Room To Go Round)", "Event With No Admission Charges (Could Cause Stampede)", "Suitable Trousers When Mucking Out Stables", 
+    "On The Way Down But Still Patronising", "To Ridicule Two-Tiered Beds", "Electric Mouse-Indicator", "Country With Blooming Automobile Industry", "Rash Unsuccessful Tennis Shot At The Net", "A Singer Wearing Dentures", "Shipboard Romance (Here Today)", "A Break Following Mental Exertion", "Circuit Training (Often Put Off)", "Pedal-Powered Tyre Factory", 
+    "Etiquette For Hotel Drinkers (Modified For Digital Age)", "Snail-Paced French Barge Carrying Food Produce", "To Disperse After False Fire Alarm", "Returning From Outer Space", "A Falling Down In Decision Making Process (Leaves People Worried)", "Been Put Out", "Tchaikovsky'S Finale", "Blood Vessel", 
+    
 ];
 
 
