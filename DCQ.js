@@ -38,7 +38,7 @@ var wordarray = ["SNOWIE", "EMBOSS", "PASTEURISED", "CANOODLE", "UNBIASSED", "CA
     "GRIZZLED", "MOTIONLESS", "RADIOACTIVE", "VAMOOSE", "CLOCKWISE", "COLLUSION", "EYEFUL", "INSTRUMENTS", "AFTERMATH", "GUSHER", 
     "HAPHAZARD", "BIRTHRIGHT", "HEARTBURN", "IMMATERIAL", "SHUCKS", "JOINERY", "COPOUT", "ROTUNDA", "FREEFORALL", "DUNGAREES", 
     "CONDESCENDING", "DEBUNK", "CURSOR", "CARNATION", "FOLLY", "FALSETTO", "FLEETING", "AFTERTHOUGHT", "RUNAROUND", "TREADMILL", 
-    "BARCODE", "ESCARGOT", "DISSEMBLE", "EARTHBOUND", "DECIDUOUS", "GARBAGE", "SWANSONG", "KINSHIP", 
+    "BARCODE", "ESCARGOT", "DISSEMBLE", "EARTHBOUND", "DECIDUOUS", "GARBAGE", "SWANSONG", "KINSHIP", "ONLOOKERS"
     
 ];
 
@@ -72,7 +72,7 @@ var questionarray = ["A mad old man is a skiers' delight", "To Make Employer Loo
     "Natural Random Obstructions On Golf Course", "Successful Baby Delivery (As It Should Be)", "Internal Combustion (It'S Personal)", "Wastage On Dressmaker'S Floor (Relevance?)", "Nickname Of Shy Oyster Opener", "A Club For Clubbers (They Fit In Easily)", "Police Industrial Strike (Excuse For Extra Holiday?)", "Tighter In The Girth (But Still Room To Go Round)", "Event With No Admission Charges (Could Cause Stampede)", "Suitable Trousers When Mucking Out Stables", 
     "On The Way Down But Still Patronising", "To Ridicule Two-Tiered Beds", "Electric Mouse-Indicator", "Country With Blooming Automobile Industry", "Rash Unsuccessful Tennis Shot At The Net", "A Singer Wearing Dentures", "Shipboard Romance (Here Today)", "A Break Following Mental Exertion", "Circuit Training (Often Put Off)", "Pedal-Powered Tyre Factory", 
     "Etiquette For Hotel Drinkers (Modified For Digital Age)", "Snail-Paced French Barge Carrying Food Produce", "To Disperse After False Fire Alarm", "Returning From Outer Space", "A Falling Down In Decision Making Process (Leaves People Worried)", "Been Put Out", "Tchaikovsky'S Finale", "Blood Vessel", 
-    
+    "Peer Group",
 ];
 
 
