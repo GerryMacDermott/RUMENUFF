@@ -1,0 +1,132 @@
+header {
+    background: url("picture.JPG");
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.bigger {
+    font-size: 150%;
+    font-style: italic;
+}
+
+hr {
+    width: 90%;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+}
+
+li a.one {
+    color: #ffffff;
+    background-color: #1e8100;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li a.one:hover {
+    background-color: rgb(21, 255, 0);
+    color: #000000;
+    border-radius: 3px;
+    transition-duration: 500ms;
+}
+
+
+li a{
+    color: #333;
+    text-decoration: none;
+    padding: 5px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li a:hover{
+    background-color: #333;
+    color: #fff;
+    border-radius: 3px;
+    transition-duration: 500ms;
+}
+
+p.centre {
+    text-align: center;
+}
+
+p.body {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#container {
+    display: flex;
+    /*background-color: black;*/
+    height: auto;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+#intro {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+#title {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    padding-bottom: 0%;
+}
+
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.animate-text {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.animate-text-start {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}

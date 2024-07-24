@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUMENUFF</title>
+    <link rel="stylesheet" href="DCQAA.css">
+    <link rel="icon" href="icon.png">
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="icon.png">
+
+</head>
+
+<body>
+    <div id="container">
+        <!-- Wrap each section of text in a div with the animate-text class -->
+        <div id="title">
+            <h1>
+                <span class="word animate-text">R U MAD ENOUGH FOR RUMENUFF?</span>
+            </h1>
+        </div>
+        <div class="word animate-text">
+            <br>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Game.html">Today's Question</a></li>
+                </ul>
+            </nav>
+            <hr>
+        </div>
+
+        <div id="intro">
+            <div class="word animate-text" id="About title">
+                <h2>About the Author</h2>
+                </div>
+
+                <div class="word animate-text" id="blurb">
+                <img src="picture.JPG">
+                <p class = "centre"><ins>Jack MacDermott</ins>
+                    <br><em>Creative Executive</em></p>
+                    <p class="body">The mastermind behind the RUMENUFF enterprise, Jack has always been a master of word games.
+                    An exceptional scrabble player and a man who did cryptic crosswords and thought "I can do this, but
+                    better".
+                    For several years, Jack created his own 'quirkic' crosswords which was arguably several RUMENUFF
+                    puzzle within a crossword.
+                    Now a jump into the modern era, Jack decided to take his work digital and RUMENUFF was created to
+                    share the scary insight into the mind of a MAD man.
+                </p>
+                <img src="Gerry.jpg">
+                <p class = "centre"><ins>Gerry MacDermott</ins>
+                    <br><em>Production Executive</em> </p>
+                    <p class="body">Of course the jump into the digital world isn't as easy as one world hope.
+                    Nor is it as easy as someone with minimal coding experience would hope.
+                    In this case of myself, Gerry MacDermott, Jack's grandson, filled the man's MAD mind with promises
+                    of a shiny website (which I foolishly thought would be easy)!
+                    Over several years of work (most of it procrastinating and an overseas holiday) here we are with
+                    something functioning most of the time!
+                </p>
+                <img src="Marg.jpg">
+                <p class = "centre"><ins>Margaret MacDermott</ins>
+                    <br><em>Assistant to the Creative Executive</em> </p>
+                  <p class="body">No hare-brained idea would be possible without the help of someone like Margy.
+                    If she wasn't involved this whole concept would still be chicken scribble on a notepad.
+                    Marg is the glue that keeps the RUMENUFF train on tracks and I cannot thank her enough for; being the
+                    filter for Jack's ideas, transcribing (and possibly translating) his writing to computer, as well as the general
+                    torment that comes from being around Jack.
+                </p>
+                <p class = "centre">
+                    <br><em>Honourable Mentions</em><br> </p>
+                    <p>Honourable mention to all those who have helped with ideas and testing and bug reporting, it is
+                    greatly appreciated.
+                    In saying that, you are all not honourable enough to get your names displayed. And too that one person reading
+                    this who thinks they deserve a shout out as a "Sales Executive" keep dreaming (you know who you
+                    are).</p>
+                    <p class = "centre"><br>Much Love and thanks for Enjoying,
+                    <br> Jack, Gerry and Marg
+                </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select elements with the animate-text class
+            const animatedElements = document.querySelectorAll('.animate-text');
+            const animatedElementsstart = document.querySelectorAll('.animate-text-start');
+           // const elementstart = animatedElementsstart[0];
+            //elementstart.style.opacity = '1';
+            //elementstart.style.transform = 'translateY(0)';
+
+
+            // Function to animate text elements sequentially
+            timedelay = 500;
+            function animateTextSequentially(index) {
+                if (index < animatedElements.length) {
+                    const element = animatedElements[index];
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                    index++;
+
+                    if (index == 5) {
+                        timedelay = 1000;
+                    }
+                    else {
+                        timedelay = 500;
+                    }
+                    // Call the function recursively with a delay
+                    setTimeout(() => {
+                        animateTextSequentially(index);
+                        //sound.play();
+                    }, timedelay); // Adjust the delay as needed
+                }
+            }
+
+            // Call the animateTextSequentially function with an initial index of 0
+            animateTextSequentially(0);
+        });
+
+
+
+    </script>
+</body>
+
+</html>
