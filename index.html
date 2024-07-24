@@ -8,7 +8,12 @@
     <link rel="icon" href="icon.png">
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="icon.png">
+
 </head>
+
+<audio autoplay id="sound">
+    <source src="wordsound.mp3" type="audio/mpeg">
+</audio>
 
 <body>
     <div id="container">
@@ -30,9 +35,11 @@
                     You are able to ask for 1 letter at a time and you have 6 incorrect guesses to find the whackily
                     redefined word. Select your letter from the keyboard on screen and then press the enter button if you
                     are happy.<br> When you think you've got it, press the final attempt button and have a crack, but
-                    you'll only get one shot at this!<br> Here is an example:<br><br> QUESTION: "Educated, Tense Person"<br>
-                    ANSWER: Taut<br><br> Now you know how it works, good luck and there will be a new word waiting for
+                    you'll only get one shot at this!<br> Here is an example:</p>
+                    <img src="Example.png">
+                    <p>The correct answer is Taut! <br>Now you know how it works, good luck and there will be a new word waiting for
                     you each day!</p>
+                    <p>Thanks for being part of a whole year of whacky RUMENUFF fun!</p>
             </div>
             <div class="animate-text" id="example-area">
             </div>
@@ -40,19 +47,25 @@
         <nav>
             <ul id="navigation">
                 <!-- Apply the class to the navigation as well -->
-                <li class="animate-text">Ready to play? <a class="one" href="Game.html">Let's Go!</a></li>
+
+                <li class="animate-text-start">Ready to play? <a class="one" href="Game.html">Let's Go!</a></li>
                 <!--<br><br><li><a href="About.html">About the Author</a></li> -->
             </ul>
         </nav>
     </div>
 
-    <audio id="sound" src="wordsound.mp3"></audio>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Select elements with the animate-text class
             const animatedElements = document.querySelectorAll('.animate-text');
+            const animatedElementsstart = document.querySelectorAll('.animate-text-start');
+            const elementstart = animatedElementsstart[0];
+            elementstart.style.opacity = '1';
+            elementstart.style.transform = 'translateY(0)';
             const sound = document.getElementById('sound');
+
 
             // Function to animate text elements sequentially
             timedelay = 500;
