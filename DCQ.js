@@ -232,9 +232,9 @@ function update() {
     if (wrongguess == 0) {
         attempts -= 1;
         if (attempts == 1) {
-            document.getElementById("answer").innerText = "You Have " + attempts + " Incorrect Guess Remaining \n Hint: Happy Birthday Da";
+            document.getElementById("answer").innerText = "You Have " + attempts + " Incorrect Guess Remaining";
         } else {
-            document.getElementById("answer").innerText = "You Have " + attempts + " Incorrect Guesses Remaining\n Hint: Happy Birthday Da";
+            document.getElementById("answer").innerText = "You Have " + attempts + " Incorrect Guesses Remaining";
         }
         failcount += 1;
         let CurrentTile = document.getElementById(row + "-" + GuessTile.toString());
