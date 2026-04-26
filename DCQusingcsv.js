@@ -12,6 +12,7 @@ async function readCSVCell(rowIndex, colIndex) {
 
     // Access the cell
     const cell = rows[rowIndex][colIndex];
+    console.log("Cell value:", cell);
     return cell;
 }
 
