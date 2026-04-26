@@ -303,7 +303,7 @@ function lose() {
         tilechange.classList.remove("tileflip");
                 //local storage
                 failcount = 0;
-                attempts = 0;
+                attempts = 6;
         localStorage.setItem("failcount",failcount);
         localStorage.setItem("attempts",attempts);
         delaylose(d);
@@ -339,7 +339,7 @@ function correct() {
         tilechange.classList.remove("tileflip");
                         //local storage
                 failcount = 0;
-                attempts = 0;
+                attempts = 6;
         localStorage.setItem("failcount",failcount);
         localStorage.setItem("attempts",attempts);
         delaycorrect(d);
