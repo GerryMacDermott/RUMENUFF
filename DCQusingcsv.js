@@ -27,7 +27,7 @@ async function readCSVCell(rowIndex, colIndex) {
 
 async function run() {
     word = await readCSVCell(day, 0);
-    question = readCSVCell(day,1);
+    question = await readCSVCell(day,1);
     }
 run();
 
@@ -53,12 +53,18 @@ const todaysdate = new Date();
 const year = todaysdate.getFullYear;
 const month = todaysdate.getMonth;
 
+
 function loadfailcount() {
     const saved = localStorage.getItem("failcount");
     return saved ? parseInt(saved) : 0;
 }
+function loadattempts() {
+    const saved = localStorage.getItem("attempts");
+    return saved ? parseInt(saved) : 0;
+}
 
 failcount = loadfailcount();
+attempts = loadfailcount();
 
 
 //onload
@@ -183,6 +189,7 @@ function update() {
         }
         failcount += 1;
         localStorage.setItem("failcount",failcount);
+        localStorage.setItem("attempts",attempts);
         let CurrentTile = document.getElementById(row + "-" + GuessTile.toString());
         CurrentTile.classList.add("tileshake");
         let lettercheck = CurrentTile.innerText;
