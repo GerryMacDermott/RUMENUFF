@@ -9,6 +9,8 @@ var start = new Date(2023, 6, 27);
 var diff = now - start;
 var oneDay = 1000 * 60 * 60 * 24;
 var day = 1;
+var word = "blank";
+var question = "blank question";
 
 async function readCSVCell(rowIndex, colIndex) {
     const response = await fetch("table.csv");
@@ -24,8 +26,8 @@ async function readCSVCell(rowIndex, colIndex) {
 }
 
 async function run() {
-    const word = await readCSVCell(day, 0);
-    const question = readCSVCell(day,1);
+    word = await readCSVCell(day, 0);
+    question = readCSVCell(day,1);
     }
 run();
 
