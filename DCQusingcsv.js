@@ -53,7 +53,7 @@ const todaysdate = new Date();
 const year = todaysdate.getFullYear;
 const month = todaysdate.getMonth;
 
-
+//load local stored counters
 function loadfailcount() {
     const saved = localStorage.getItem("failcount");
     return saved ? parseInt(saved) : 0;
@@ -64,7 +64,7 @@ function loadattempts() {
 }
 
 failcount = loadfailcount();
-attempts = loadfailcount();
+attempts = loadattempts();
 
 
 //onload
@@ -188,8 +188,10 @@ function update() {
             document.getElementById("answer").innerText = "You Have " + attempts + " Incorrect Guesses Remaining";
         }
         failcount += 1;
+        //local storage
         localStorage.setItem("failcount",failcount);
         localStorage.setItem("attempts",attempts);
+
         let CurrentTile = document.getElementById(row + "-" + GuessTile.toString());
         CurrentTile.classList.add("tileshake");
         let lettercheck = CurrentTile.innerText;
@@ -299,6 +301,11 @@ function lose() {
     for (let d = 0; d < width; d++) {
         let tilechange = document.getElementById(0 + "-" + d.toString());
         tilechange.classList.remove("tileflip");
+                //local storage
+                failcount = 0;
+                attempts = 0;
+        localStorage.setItem("failcount",failcount);
+        localStorage.setItem("attempts",attempts);
         delaylose(d);
     }
 
@@ -330,6 +337,11 @@ function correct() {
     for (let d = 0; d < width; d++) {
         let tilechange = document.getElementById(0 + "-" + d.toString());
         tilechange.classList.remove("tileflip");
+                        //local storage
+                failcount = 0;
+                attempts = 0;
+        localStorage.setItem("failcount",failcount);
+        localStorage.setItem("attempts",attempts);
         delaycorrect(d);
     }
     // print specific message per amount of mistakes
