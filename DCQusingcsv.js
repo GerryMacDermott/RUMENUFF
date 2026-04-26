@@ -3,6 +3,13 @@
 
 //updated 29.12.25
 
+///variables
+var now = new Date();
+var start = new Date(2023, 6, 27);
+var diff = now - start;
+var oneDay = 1000 * 60 * 60 * 24;
+var day = 1;
+
 async function readCSVCell(rowIndex, colIndex) {
     const response = await fetch("table.csv");
     const text = await response.text();
@@ -16,14 +23,12 @@ async function readCSVCell(rowIndex, colIndex) {
     return cell;
 }
 
-///variables
-var now = new Date();
-var start = new Date(2023, 6, 27);
-var diff = now - start;
-var oneDay = 1000 * 60 * 60 * 24;
-var day = 1;
-var word = await readCSVCell(day,0);
-var question = await readCSVCell(day,1);
+async function run() {
+    const word = await readCSVCell(day, 0);
+    const question = readCSVCell(day,1);
+    }
+run();
+
 var height = 1;
 var width = word.length; //length of the word
 var GuessTile = word.length + 1; //allows the creation of the 'guessing tile'
