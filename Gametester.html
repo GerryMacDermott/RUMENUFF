@@ -1,0 +1,124 @@
+<html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.7">
+<link rel="stylesheet" href="DCQ.css">
+<link rel="icon" href="icon.png">
+<link rel="shortcut icon" href="icon.ico">
+<link rel="apple-touch-icon" href="icon.png">
+<script src="DCQusingcsv.js"></script>
+
+
+<head>
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LHHRMW8BBP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LHHRMW8BBP');
+</script>
+
+    <title>RUMENUFF</title>
+</head>
+
+
+
+
+<body>
+    <div id="container">
+        <h1 class="animate-text">RUMENUFF</h1>
+        <nav>
+            <ul class="animate-text">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="PreviousQ.html">Previous Questions</a></li>
+                <li><a href="aboutauthor.html">About the Author</a></li>
+            </ul>
+        </nav>
+        <div id="game" class="animate-text">
+            <hr>
+            <div id="question"></div>
+            <hr>
+            <h2>Your Answer</h2>
+            <div id="guess"></div>
+            <h2>Guessing Letter</h2>
+            <div id="letter"></div>
+            <div id="answer"></div>
+            <br>
+            <div id="keyboard-container" class="animate-text">
+                <div class="keyboard-row">
+                    <button id="Q" data-key="Q">Q</button>
+                    <button id="W" data-key="W">W</button>
+                    <button id="E" data-key="E">E</button>
+                    <button id="R" data-key="R">R</button>
+                    <button id="T" data-key="T">T</button>
+                    <button id="Y" data-key="Y">Y</button>
+                    <button id="U" data-key="U">U</button>
+                    <button id="I" data-key="I">I</button>
+                    <button id="O" data-key="O">O</button>
+                    <button id="P" data-key="P">P</button>
+                </div>
+                <div class="keyboard-row">
+                    <div class="spacer-half"></div>
+                    <button id="A" data-key="A">A</button>
+                    <button id="S" data-key="S">S</button>
+                    <button id="D" data-key="D">D</button>
+                    <button id="F" data-key="F">F</button>
+                    <button id="G" data-key="G">G</button>
+                    <button id="H" data-key="H">H</button>
+                    <button id="J" data-key="J">J</button>
+                    <button id="K" data-key="K">K</button>
+                    <button id="L" data-key="L">L</button>
+                    <div class="spacer-half"></div>
+                </div>
+                <div class="keyboard-row">
+                    <button data-key="enter" class="wide-button">Enter</button>
+                    <button id="Z" data-key="Z">Z</button>
+                    <button id="X" data-key="X">X</button>
+                    <button id="C" data-key="C">C</button>
+                    <button id="V" data-key="V">V</button>
+                    <button id="B" data-key="B">B</button>
+                    <button id="N" data-key="N">N</button>
+                    <button id="M" data-key="M">M</button>
+                    <button data-key="del" class="wide-button">Del</button>
+                </div>
+            </div>
+            <hr>
+            <button id="FGbutton">FINAL WORD ATTEMPT</button>
+        </div>
+        <div id="score">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select elements with the animate-text class
+            const animatedElements = document.querySelectorAll('.animate-text');
+
+            // Function to animate text elements sequentially
+            timedelay = 400;
+            function animateTextSequentially(index) {
+                if (index < animatedElements.length) {
+                    const element = animatedElements[index];
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                    index++;
+
+                    // Call the function recursively with a delay
+                    setTimeout(() => {
+                      animateTextSequentially(index);
+                    }, timedelay); // Adjust the delay as needed
+                }
+            }
+
+            // Call the animateTextSequentially function with an initial index of 0
+            animateTextSequentially(0);
+        });
+
+
+
+    </script>
+</body>
+
+</html>
