@@ -58,7 +58,7 @@ function loadfailcount() {
     return saved ? parseInt(saved) : 0;
 }
 
-let failcount = loadfailcount();
+failcount = loadfailcount();
 
 
 //onload
