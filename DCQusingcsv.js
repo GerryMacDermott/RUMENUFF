@@ -53,6 +53,13 @@ const todaysdate = new Date();
 const year = todaysdate.getFullYear;
 const month = todaysdate.getMonth;
 
+function loadfailcount() {
+    const saved = localStorage.getItem("failcount");
+    return saved ? parseInt(saved) : 0;
+}
+
+let failcount = loadfailcount();
+
 
 //onload
 window.onload = function () {
@@ -175,6 +182,7 @@ function update() {
             document.getElementById("answer").innerText = "You Have " + attempts + " Incorrect Guesses Remaining";
         }
         failcount += 1;
+        localStorage.setItem("failcount",failcount);
         let CurrentTile = document.getElementById(row + "-" + GuessTile.toString());
         CurrentTile.classList.add("tileshake");
         let lettercheck = CurrentTile.innerText;
