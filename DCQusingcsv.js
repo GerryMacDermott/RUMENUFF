@@ -9,8 +9,9 @@ var start = new Date(2023, 6, 27);
 var diff = now - start;
 var oneDay = 1000 * 60 * 60 * 24;
 var day = 1;
-var word;
-var question;
+var guessed = [];
+//var word;
+//var question;
 
 async function readCSVCell(rowIndex, colIndex) {
     const response = await fetch("table.csv");
@@ -28,23 +29,27 @@ async function readCSVCell(rowIndex, colIndex) {
 async function run() {
     word = await readCSVCell(day, 0);
     question = await readCSVCell(day,1);
+    width = word.length; //length of the word
+    var GuessTile = word.length + 1; //allows the creation of the 'guessing tile'
+    guessed.length = GuessTile;
     }
+
 run();
 
 var height = 1;
-var width = word.length; //length of the word
-var GuessTile = word.length + 1; //allows the creation of the 'guessing tile'
+
+
 var col = word.length;
 var colFINAL = 0;
 var row = 0;
 var done = 0;
 var failcount = 0;
 var attempts = 6; //incorrect letters in a set number
-var guessed = [];
+
 var letterwasguessedtrue = [];
 var doneFINAL = 0;
 var wrongguess = 0;
-guessed.length = GuessTile;
+
 //const FG = document.querySelectorAll(".finalguess1 button");
 var FGlock = 0;
 const tileDisplay = document.querySelectorAll(".example-area");
