@@ -8,13 +8,13 @@
 
 //word and question array are in rows of 10.
 // answers must be in all capitals due to key reading
-var wordarray = ["BILLY", "NOLA"];
-var questionarray = ["Here's The Kid! And He Shoots From The Hip", "Do,Re,Mi,Fa,So, ,Ti,Do"];
+//var wordarray = ["BILLY", "NOLA"];
+//var questionarray = ["Here's The Kid! And He Shoots From The Hip", "Do,Re,Mi,Fa,So, ,Ti,Do"];
 
 ///variables
 var day = 1;
-var word = wordarray[day];
-var question = questionarray[day];
+var word = "NOLA";
+var question = "Do,Re,Mi,Fa,So, ,Ti,Do";
 var height = 1;
 var width = word.length; //length of the word
 var GuessTile = word.length + 1; //allows the creation of the 'guessing tile'
