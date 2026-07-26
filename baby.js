@@ -13,8 +13,8 @@
 
 ///variables
 var day = 1;
-var word = "NOLA";
-var question = "Do,Re,Mi,Fa,So, ,Ti,Do";
+const word = "NOLA";
+const question = "Do,Re,Mi,Fa,So, ,Ti,Do";
 var height = 1;
 var width = word.length; //length of the word
 var GuessTile = word.length + 1; //allows the creation of the 'guessing tile'
