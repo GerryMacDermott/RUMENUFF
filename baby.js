@@ -48,7 +48,7 @@ window.onload = function () {
 // game setup and listen for keys
 function game() {
     //Load question --> will be pulled from array eventually
-    document.getElementById("question").innerText = "Today's Mindboggler - Baby Edition:\n" + question;
+    document.getElementById("question").innerText = "Today's Mindboggler - BABY EDITION!:\n" + question;
 
     //Create word squares
     for (let r = 0; r < height; r++) {
@@ -264,7 +264,7 @@ function delaylose(d) {
 }
 
 function lose() {
-    document.getElementById("answer").innerText = "You didn't get it... but at least you've still got a grip on reality!";
+    document.getElementById("answer").innerText = "Brianna & Gerry would love to announce the arrival of\n Nola Mae MacDermott";
     for (let d = 0; d < width; d++) {
         let tilechange = document.getElementById(0 + "-" + d.toString());
         tilechange.classList.remove("tileflip");
@@ -302,7 +302,7 @@ function correct() {
         delaycorrect(d);
     }
 
- document.getElementById("answer").innerText = "Marvellous! \n Completed with " + failcount + " mistakes \n WELCOME BABY "+word+ " MACDERMOTT";
+ document.getElementById("answer").innerText = "Marvellous! \n Completed with " + failcount + " mistakes \n Brianna & Gerry would love to announce the arrival of\n Nola Mae MacDermott";
             var copyText = "RUMENUFF #" + day + ": ✅ I'm Mad Enuff!\nhttps://rumenuff.com/"
   
     Let buttoncreate = document.createElement('button');
