@@ -301,11 +301,13 @@ function correct() {
         tilechange.classList.remove("tileflip");
         delaycorrect(d);
     }
-
+for (let e =0; e < width; e++){
+    if (failcount < 6) {
  document.getElementById("answer").innerText = "Marvellous! \n Completed with " + failcount + " mistakes \n Brianna & Gerry would love to announce the arrival of\n Nola Mae MacDermott";
-var copyText = "RUMENUFF #" + day + ": ✅ I'm Mad Enuff!\nhttps://rumenuff.com/";
-  
-    Let buttoncreate = document.createElement('button');
+  e = 100;
+    }
+}
+    let buttoncreate = document.createElement('button');
     buttoncreate.id = "sharebutton";
     buttoncreate.innerText = "Share Score";
     buttoncreate.classList.add("scoreshare");
