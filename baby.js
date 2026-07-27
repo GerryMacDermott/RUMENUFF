@@ -303,7 +303,7 @@ function correct() {
     }
 
  document.getElementById("answer").innerText = "Marvellous! \n Completed with " + failcount + " mistakes \n Brianna & Gerry would love to announce the arrival of\n Nola Mae MacDermott";
-            var copyText = "RUMENUFF #" + day + ": ✅ I'm Mad Enuff!\nhttps://rumenuff.com/"
+var copyText = "RUMENUFF #" + day + ": ✅ I'm Mad Enuff!\nhttps://rumenuff.com/";
   
     Let buttoncreate = document.createElement('button');
     buttoncreate.id = "sharebutton";
