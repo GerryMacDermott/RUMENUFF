@@ -304,7 +304,6 @@ function correct() {
 
  document.getElementById("answer").innerText = "Marvellous! \n Completed with " + failcount + " mistakes \n WELCOME BABY "+word+ " MACDERMOTT";
             var copyText = "RUMENUFF #" + day + ": ✅ I'm Mad Enuff!\nhttps://rumenuff.com/"
-        }
   
     Let buttoncreate = document.createElement('button');
     buttoncreate.id = "sharebutton";
